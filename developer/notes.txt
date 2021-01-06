@@ -13,3 +13,26 @@ ssh into the aws instance
 ==============================
 - curl http://169.254.169.254/latest/dynamic/instance-identity/document (instance identity doc)
 - cat /var/log/cloud-init-output.log (view log of instance)
+    ************************
+    important curl links
+    - curl http://169.254.169.254/latest/dynamic/instance-identity/document
+        (identy documenet for your instance)
+    - curl http://169.254.169.254/latest/meta-data/public-ipv4
+        (instance public ip address)
+    - curl http://169.254.169.254/latest/meta-data/mac
+        (mac address of the instance)
+    - curl http://169.254.169.254/latest/meta-data/network/interfaces/macs/Your-MAC/vpc-id
+        (to get vpc id in which the instance resides) replace mac adddress
+    - curl http://169.254.169.254/latest/meta-data/network/interfaces/macs/Your-MAC/subnet-id
+        (to get the subnet-id in which the instance resides)
+    - curl http://169.254.169.254/latest/user-data
+        ( to get the instance user data)
+
+
+
+
+PART - 2
+
+The app will need:-
+   -image storage, database access, and image analysis
+   -api and sdks(boto python sdk 
