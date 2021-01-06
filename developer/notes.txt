@@ -1,0 +1,15 @@
+1. deployment, sign for users, distributed tracing, serverless compute, messaging queues, etc
+
+2. About the project/web application on flask
+    upload photo,secure directory, user registration, password validation, email validation,password reset
+app stores collection of images, storage is needed, structued data, print the photo
+troubleshoot and optimize, latency
+
+
+- service oriented architecture exposed with aws api
+
+===============================================================================================
+ssh into the aws instance
+==============================
+- curl http://169.254.169.254/latest/dynamic/instance-identity/document (instance identity doc)
+- cat /var/log/cloud-init-output.log (view log of instance)
