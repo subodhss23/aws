@@ -72,3 +72,29 @@ amazon rekogination
 - object and scene detection
 - facial analysis
 - facial recogination
+
+detect-labels
+detect-faces
+
+**** adding rekogniation on the app
+
+===================================
+IAM roles
+==================================
+- users, groups or roles
+- roles -> truested identity for certain period of time (security token service)
+    - can be service, another aws account(can be revoked after the job is done)
+
+
+======  RDS ============
+**** adding database.py as a database for the app(script database_create_table.py)
+
+===========================
+
+IntroduCtion to availabilty
+- recovering from hardware failure automatically
+- resilient
+
+************** LOAD BALANCING**************
+
+
