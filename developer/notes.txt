@@ -43,3 +43,32 @@ The app will need:-
     makes easy by providing sdk's - using boto python with pip
     - need user and authentication credentials(access key and secret key)
     - IAM ( file called credentials) 
+
+
+===================================================================================
+- cloudformation
+- created new user from root user and start using from another user
+- used key pair to ssh into the machine
+
+==================================================================================
+
+S3 - the bucket
+=======================
+- they are private, only the user who created them can access them
+- access control via three methods
+    a) policies     - JSON
+    b) IAM users and groups     - give access to group or user
+    c) Access control lists     - aws account
+
+====================================
+CLOUD 9
+===================================
+IDE inside aws
+- compile flask app and connect with s3 bucket to uplaod picture
+
+=======================================
+amazon rekogination
+=================================
+- object and scene detection
+- facial analysis
+- facial recogination
