@@ -1,0 +1,25 @@
+ PART ---- 1
+============================================================
+- Fundramental of cloud security
+    - shared responsibilty model
+- Compliance
+- Account management
+
+
+1. Shared responsibilty model
+2. Compliance
+
+- Principle of least priviledge
+- use access policy
+- json document
+    - effect
+    - action
+    - resources
+- MFA (Multi facto authentication)
+- Strong password
+- Roles and groups to assign permisssions
+- Monitoring using amazon cloudwatch and aws cloudtrail
+
+****************************************************************
+1. creating new user
+2. avoding using root account
