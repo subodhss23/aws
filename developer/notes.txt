@@ -35,4 +35,11 @@ PART - 2
 
 The app will need:-
    -image storage, database access, and image analysis
-   -api and sdks(boto python sdk 
+   -api and sdks(boto python sdk
+   -identity and access management(authentication and authorization in aws)
+   - image analysis
+
+*** aws API's
+    makes easy by providing sdk's - using boto python with pip
+    - need user and authentication credentials(access key and secret key)
+    - IAM ( file called credentials) 
