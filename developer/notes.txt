@@ -96,5 +96,25 @@ IntroduCtion to availabilty
 - resilient
 
 ************** LOAD BALANCING**************
+- ELB (Elastic load balancer)
+- within EC2 there is load balancer in aws console
+- week three (go back for review) last video(for configuration)
+===============================================================
+
+****** amazon cognito*******************
+
+- concept of authenticated user
+- authentication and authorization which is inside the app
+    (can be an easy attack vector)
+
+
++++++++++++ overview of app till now++++++++++
+1. photos -> S3     (issuing presign urls)
+2. list of photos and tags -> RDS database
+3. need to add directory of user and autheticate them
+    user info -->   cognito
+**** seperation of authentication from authorization *****
+ 
+
 
 
