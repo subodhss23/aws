@@ -115,6 +115,61 @@ IntroduCtion to availabilty
     user info -->   cognito
 **** seperation of authentication from authorization *****
  
+Authorizing flow in out app
+    - user of csrf token
 
+flow
+--------
+user_browser -> app -> congnito UI -> cognito token endpoint
+- token are in JWT format
+- securing the connection to server with TLS
+- End-to-End encryption and encryption at rest
+- ssh tunneling
+
+summary part 4:-
+    - amazon cognito user pools
+    - aws certificate manager
+    - securing connection between users and load balancer
+    - encryption data in aws
+
+==================================
+PART 5
+================================
+- AWS XRAY - distributed tracing system
+- LAMBDA 
+
+- aws xray
+    - analyze and debug distrubuted application
+    - identify issue, errors and performance 
+    -  trace aws resources, databases and web APIs
+
+- aws xray traces
+    - segments
+    -  subsegments
+    - annotation/meta data
+
+- LAMBDA
+    - serverless compute
+    - invoke or trigger by other aws services
+    - api gateway, dynamodb streams, kinesis, s3, sns, cognito
+
+part 6
+====================
+- Event driven architecture
+    - SQS
+    - SNS
+    - LAMBDA
+
+- How do AWS services do async?
+    - amazon SNS (simple notification services)
+    - delivers messages
+
+    -  amazon SQS
+        - message queue where message can be stored while waiting to be processed
+             - send message
+             - receive message
+                    - max num of message
+                    - visibility - timeout
+                    - wait - time - seconds 
 
 
