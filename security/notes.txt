@@ -199,4 +199,13 @@ PART 3                                     |
     
     - AWS CloudHSM 
     
-
+4. Database encryption
+    - RDS -> each DB engine has its own process of implementation of SSL
+        - while creating the instance the encryption needs to be enabled
+    - data encrypted at rest includes underlying storage for a DB instance, its automated backups,
+        read replicas, and snapshots.
+    - to manage the key AWS KMS is used
+    - what if NoSQL?
+        - all user data stored in DynamoDB tables are encrypted by default.
+        - server side encryption is enabled and cannot be diabled
+        
