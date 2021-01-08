@@ -1,0 +1,56 @@
+        
+            MIGRATION
+=========================================================
+
+what is migration?
+    - process of moving data, application, or other business elements to cloud computing env.
+    
+
+- Five phase approach:-
+    - Migration preparation and business planning
+    - Portfolio discovery and planning
+    - Designing, migration, and validating application (phase 3 & 4)
+    - operate
+
+- Cloud Adoption Framework - Hybrid Environments
+    - business prespectives look at business, people and governance
+    - technical prespectives focus on platform, security, and operations.
+    
+
+- Six migration strategies:-
+    - Rehost
+    - Replatform
+    - Repurchase
+    - Refactor
+    - Retire
+    - Retain
+    
+    
+    1. Rehost
+        - lift and shift
+        - pick up and move your app or env to the cloud
+        - like forklifting
+        - moving to cloud and rearchitecting later once team is comfortable with tech
+
+    2. Replatform
+        - gaining some optimization while migrating
+        - lift, thiker, and shift
+        - just changing small parts, for eg:- cloud db engine,
+    
+    3. Repurchase
+        - making descision to move to different product or licenscing model
+        - eg: moving from commercial license to enterprise, or vice versa
+        
+    4. Refactor
+        - refactor or rearchitect
+        - driven to add features, scale, or perfomace that would be difficult to achieve in current env.
+        - can be expensive cause of hours spend, often yeilds best results
+        - taking full advantage of services that the cloud offers.
+    
+    5. Retire
+        - removin legacy technolgy, clean up and reduce assests.
+        
+    6. Retain
+        - retain as is.
+        
+
