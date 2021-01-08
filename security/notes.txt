@@ -300,4 +300,7 @@ PART 4
     - AWS secrets manager is aws service makes easier to manage secrets.
    
     NOTE:- AWS Secrets Manager allows you to handle access to secrets without the need to store 
-            them locally on any intance, server, or in any container. 
+            them locally on any intance, server, or in any container.
+
+4) Well architected tool
+     
