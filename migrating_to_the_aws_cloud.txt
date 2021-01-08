@@ -125,9 +125,32 @@ PART 2
                     Azure virtual machines.
                 
                 
+5. AWS migration hub
+    - allows to choose the aws and partner migration tools that best fit your needs
+    - provide single placer for you to track the progress of the applications you are migrating.
 
+6. Application discover service
+    - 2 ways 
+        - performing disovery and collecting data about on-premises servers; agentless and agent-based.
+        a. Agentless discovery
+            - works with VMware vCenter
+            - agentless discovery virtual appliance
+            - discovery connector collects configuration information about the servers, like hostnames, ip addresses, mac address, disc resource allocations.
+            - discovery connector also collects metrics about the VMs.
+            - these data point will be extremly useful, if using replatform approach.
+            - cannot look inside vm for detail.
 
+        b. Agent-based discovery
+            - agent will collect static configuration data
+            - will record detailed time-series system performance information, inbound and outbound network connections,and process that are running.
+            - these data can be export to perform an analysis and to identify network connections between servers for grouping servers as applications.
+            - the application discovery service is integrated with our AWS migration hub, which helps to create a single pane of glass view into migration process.
+            - after the service has performed its discovery, user will be able to view the discovered servers, group them into applications, and then user the migration hub to track the migration status of each application.
+        - data can be exported to amazon athena and amazon quicksight
 
+- aws discovery service helps user to obtain a snapshot of current state of you data center servers,and the data collect helps to create a cost-optimized migration plan based on unique business requiremenets.
+
+        
 
 
 
