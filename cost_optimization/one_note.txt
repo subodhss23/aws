@@ -1,0 +1,22 @@
+10 aws cost optimization best practices.
+
+    1. Rightsizing EC2 instances
+    2. Scheduling on/off times
+    3. Purchasing reserved instances
+    4. Delete unattached EBS volumes
+    5. Delete obsolte snapshots
+    6. Release unattached Elastic IP addresses
+    7. Upgrade instance to the latest generation
+    8. Purchase reserved nodes for redshift and elasticCache Service
+    9. Terminate zombie assets
+    10. Move infrequently-accessed data to lower cost tires
+
+
+some extra ones:-
+    11. Use auto scaling
+    12. consolidating billing
+    13. again use reserve and spot instances
+    14. use aws cost explorer, aws budgets, aws trusted advisor
+    15. leverage the spot market
+    16. data transfer cost(service like kafka and cassandra costs)
+    
