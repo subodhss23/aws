@@ -168,4 +168,35 @@ PART 2
                 from multiple AWS services, such as Amazon GuardDuty, Amazon Inspector, Amazon Macie
                 , Aws partner solutions
             - visually summarized on itegrated dashboards witha ctionable graphs and tables.
-        
+       
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                           |
+PART 3                                     |
+--------------------------------------------
+- Data protection - (Encryption)
+
+
+1. Data types
+    - object    -> S3, S3 glacier
+    - database  --> RDS, timestream, quantum ladger database, neptune
+    - amazon ec2 data  --> EBS, EFS
+    - data warehouse   --> redshift, athena
+    - data lake     -->lake formation
+    - transfer of data --> snowball, snowmobile
+    
+2. Encryption in transit
+    - define requirements for data protection in transit
+    - authenticate network communications (by using TLS or using IPSec)
+    - encryption on app can be done on web app or on load balancer
+    - ACM (Aws certificate manager) handles creation and management of public SSL and TLS
+        certificates.
+    
+3. Encryption at Rest
+    - KMS 
+    - CMK (managed by user) (lives in users aws account)
+    - aws managed ( lives in users aws account)
+    - aws owned ( lives outside users aws account)
+    
+    - AWS CloudHSM 
+    
+
