@@ -208,4 +208,96 @@ PART 3                                     |
     - what if NoSQL?
         - all user data stored in DynamoDB tables are encrypted by default.
         - server side encryption is enabled and cannot be diabled
+       
+
+***************     S3
+- how to secure s3?
+    - allow access only to authorized parties
+    - disable public access unless needed
+    - consider encryption
+    - no extra charge for default encryption but will be charge for 
+        encryption keys
+    
+    
+- Amazon Macie
+    - manged option of securing S3 buckets.
+    - use machine learning
+    - it checks:-
+        - exposure of data
+        - insider threats
+        - targeted attacks
         
+
+- EBS Encryption
+    - EBS -> block storage for ec2 instance(like virtual hard drive)
+    - typical use case:-
+        - big data analytics
+        - relational and nosql database
+        - stream and log processing applications
+        - data warehousing applications
+
+    - has a feature to take snapshot to backup, to store on S3
+    - it uses aws key managemenet services
+    - encryption happens in server
+    - can be encrypted or unencrypted
+   
+--------------------------------------------------------------------------------------------------
+PART 4
+-------------------------------------------------------------
+
+1) protecting computer resources
+    -EC2
+        -aws will be responsible for hypervisor and EC2 instance isolation
+        -to protech ec2 instance, os is users responsibilty
+        - user network groups, use network ACLs as a scondary control for denying a specific subnet
+        - only should install necessary and well known packages.
+        - ssh key should be secured
+        - control the API access coming from EC2 instances
+        - user IAM roles for API permissions
+        - apply change management and configuration management to monitor and control Amazon EC2
+            configurations.
+        - regularly scan and install missing patch for your instances.
+        - Apply security monitoring and auditing for EC2 resources and your accounts.
+            - cloudtrail for api
+        
+        - Docker services
+            - Amazon Elastic container service(ECS)
+            - Amazon Elastic Kubernetes Service (EKS)
+            - AWS Fargate
+            - AWS Elastic Beanstalk
+        
+        - AWS Lambda
+            - Automatically runs code without requiring you to provision or manage servers.
+            - AWS manages:-
+                - Underlying infrastructure and foundation services
+                - operating system
+                - application platform
+            - Users are reponsible for:-
+                - sercurity of your code
+                - storrage and accessibility of sensitive data
+                - IAM to the Lambda service and within your function
+                - can use cloudwatch and cloudtrail to monitor and watch lambda function
+                - track configuration using AWS config
+
+2) protecting endpoints
+    EC2 --> 
+        - Elastic Load Balancer
+            - Application load balancer(layer 7)
+            - Network load balancer(layer 4)
+                - round robin
+        - Amazon API gateway
+            - protecting backend by not opening whole interface to the world
+            - use SigV4 to authorize user for api gateway
+        - AWS WAF
+            - web application firewall that helps protect the web app from common web exploits that
+                could affect app availability, compromise security, or consume excessive resources.
+            
+3) Managing Secrets
+    - sercrets are password, api keys or even arbitary text
+    - rotate secret frequently 
+    - secrets need to be encrypted in rest and in transit
+    - never to log secrets in system logs and application logs
+    - AWS secrets manager is aws service makes easier to manage secrets.
+   
+    NOTE:- AWS Secrets Manager allows you to handle access to secrets without the need to store 
+            them locally on any intance, server, or in any container. 
