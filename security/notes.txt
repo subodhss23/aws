@@ -23,3 +23,18 @@
 ****************************************************************
 1. creating new user
 2. avoding using root account
+3. creating group, adding user and giving permission with policy
+    - how to scale account creation with right resource, right permission?
+        --> aws organization
+            - automate  account creation and management
+            - create groups of account to meet business needs
+            - govern access to aws service resources region by policy
+            - set up single  payment method for all aws account with consolidation billing
+            - share resources across accounts
+
+4. creating new orgization
+5. keep master account free of any operational aws resources
+6. use aws cloudtrail
+- apply least priviledge practice
+-assign policies to organizational units
+
