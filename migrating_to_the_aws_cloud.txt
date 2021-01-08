@@ -53,4 +53,93 @@ what is migration?
     6. Retain
         - retain as is.
         
+------------------------------------------------------------------------------------------------
+
+PART 2
+
+------------------------------------------------------------------------------------------------
+
+1. Scalability
+    
+    a. Scaling constraint
+        - app cannot support downtime it would take while changing the underlying architecture
+        - manage caches and queues
+        - offloading unnecessary work form unscalable servers
+        - stale data was life-cycled off of the server to conserve storage
+                
+
+    b. Session data managemenet
+        - what if there is resources that technically can scale but don't wanna lose session data 
+            in the proces?
+                - store session data off the instance.
+                - using off-server session storage
+    
+    c. Major scaling methodologies
+        - horizontal and vertical scaling
+           * horizontal scaling
+                - adding more resources and distribute accross them
+                - the benefit is it incurs no downtime for orignial resources
+                - as load continue to grow we can add more and more resources
+                - as the load goes down we can scale back to the orginal number.
+
+            * vertical scaling
+                - maintain same local resources but making the resource more capable.
+                - adding more memory, storage, compute power
+                - limitation, some downtime,
+                - you cannot scale down when you scale up
+
+
+2. High Availability
+
+    - building in such a way that allows for increased uptime.
+    - designing for high availability is always a good practice.
+    - it is easier in cloud to achieve this
+    - avoid single point of failure
+    - build multiple instance, or app, 
+    - utilize way to distribute traffic and requests across multiple endpoints or nodes
+    - load balancing helps a lot here
+    - fault tolerance with scalibility
+    - monitor your environments
+    - automate recovery 
+
+
+3. Considerations with Migrating DB vs Applications
+    
+        - size, schema, types of tables, engine-specific limitations
+        - platform review and considerations
+        - key parameters of new environment
+        - can app afford downtime? If yes, how long?
+        - data migration - now or later?
+        - planning talent/expert          
+        - managing time
+
+
+4. Aws server migration services.
+
+        - SMS (aws service)
+            - enables an easier transfer of your virtual resoures directly into your aws cloud env.
+            - SMS is agentless service, makes easier and faster to migrate up to thousands of
+                on-premise workloads on AWS.
+            - requirements:-
+                - The service is currently only available for VMware vSphere, Microsoft Hyper-V, and
+                    Azure virtual machines.
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
