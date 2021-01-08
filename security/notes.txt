@@ -85,5 +85,87 @@ PART 2
     
     b) VPC endpoint and private links
         - how to secure traffic between two VPCs?
-            
+        - do not leave aws infrastructure 
+        - two types of VPC endpoints:-
+            - Gateway endpoint
+            - Interface endpoint
 
+    c) Route tables
+        - when provisioning VPC it comes with route table, like a home router(analogy)
+        - must associate a subnet with an actual route table.            
+
+    - what is flow logs in VPC? What can it monitor? ********
+
+---------------------------------------------------------------------------
+2. Directive controls
+-----------------------------------------------------------------------------    
+    - auditing 
+    
+    a) AWS cloudtrail
+        - log, continously monitor, retain account activity related to account across aws infrastructure.
+
+    b) AWS config
+        - assess, audit, and evaluate the configuration of aws resources.
+        - continously monitors and records aws resource configurations.
+        - this enables to simplify compliance auditing, security analysis, change management, and
+            operational troubleshooting.
+        - configuration management
+        - history, notification proactively
+        
+    c) Amazon Inspector
+        - exposure of ec2 instances, vulnerabiliites
+        - three parts:-
+            - network configuration reachability
+            - amazon agent
+            - security assessment service
+            
+    d) AWS Trusted Advisor
+        - this service assists in provisioning aws resources using best practices.
+        - and then produces a report under five different categories:-
+            - cost optimization
+            - performance
+            - security
+            - fault tolerance
+            - service limits
+        
+--------------------------------------------------------------------------------------------------
+    - Monitor
+    
+    a) CloudWatch and cloudwatch logs
+        - alarm --> SNS topic or auto scaling policy
+        - mointor to chaing an ec2 security group
+        - can be used to:-
+            - monitor
+            - store
+            - access
+        
+        - usecase is to collect and store application logs, and server operation system logs.
+        - another usecase is to use Cloudtrail to capture API activities and send them to
+            cloudwatch logs.
+        - also can log route 53 DNS queries into cloudwatch logs.
+        - cloudwatch logs can be used to retain and archive log data in S3
+        - cloudwatch logs insights can be used to interactively search and analyze the data.
+       
+    
+    b) Monitoring guard duty and sercurity hub
+        - Amazon GuardDuty
+            - a threat-detection service that is continuously monitors for malicious or
+                unauthorized behavior to help you protect your AWS accounts and resources.
+            - uses machine learning, anomaly detection, and integrated threat intelligence to 
+                identify and prioritize potential threats.
+        
+            - it analyze multiple aws data resources, such as
+                - aws cloudtrail,amazon vpc flow logs, DNS logs
+                - guardduty and aws cloudwatch events or current event management sytem can be 
+                    integrated to alert security team.
+            
+            - Amazon guardDuty provides three severity levels - 
+                - low, medium, and high  
+
+
+        --> AWS Security hub 
+            - single place that aggregates, organizes, and prioritizes security alerts and findings
+                from multiple AWS services, such as Amazon GuardDuty, Amazon Inspector, Amazon Macie
+                , Aws partner solutions
+            - visually summarized on itegrated dashboards witha ctionable graphs and tables.
+        
