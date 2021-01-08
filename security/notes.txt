@@ -37,4 +37,53 @@
 6. use aws cloudtrail
 - apply least priviledge practice
 -assign policies to organizational units
+7. IAM roles
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ AWS IAM
+=======================================
+- Manage  IAM users and their access
+- manage IAM roles and their permissions
+- manage federated users and their permissions
+    - aws console SSO or API federation
+
+*** Different policy
+    - aws managed policy
+    - customer managed policy
+    - inline policy
+    ( recomendation is to use managed policy instead of inline policy)
+
+--->>>AWS Single Sign-On(SSO)
+    - helps centrally manage sso access to multiple aws accounts and business application.
+    - login once and get access to multiple application or accounts is an exaple of sso.
+
+-->> Amazon cloud directory
+    - can create directory for varitey of use cases, such as:-
+        - organizational charts
+        - course catalogs,
+        - device registeries
+    - gives flexibility to create directories with hierarchies that span multiple dimensions
+
+================================================================================================
+** Directory services
+    - cognito (user pool) stores data of and about the users
+    - cognito identity
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PART 2
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+1. Network isolation
+    - Endpoint allow secure HTTP access (HTTPS)
+    a) VPC
+    - VPC can be connected with IPSec tunnel and AWS direct connect  to on premise infrastructure
+        -NACLs are for  public subnet
+            - list that contains whitelist and blacklist ips
+            - are stateless(must have inbound and outbound rules)
+    - Security groups act as firewall for Amazon EC2 instances, controlling traffic at the instance level.
+        - they are stateful (allow inbound allows outbound, and vice versa)
+    
+    b) VPC endpoint and private links
+        - how to secure traffic between two VPCs?
+            
 
