@@ -152,6 +152,129 @@ PART 2
 
         
 
+**** Exercise *********
+ - migate data from on prem to aws
+
+    a. Discover
+    b. Experiment
+    c. Iterate
+    d. Deploy AWS service
+
+-------------------------------------------------
+6. Multi-environment security and communications |
+-------------------------------------------------
+- use authenticated network communication protocals.
+    (using IPsec tunnels and transport layer security or TLS)
+- set up automated tools to identify other issues.
+- encryption data at rest
+- securing data use
+- use a least-privilege access model.
+
+
+7. Three of the most commonly used storage services:-
+    a) Amazon elastic block store
+        - like hard drive
+        - can change dynamically volume attached to an instance.
+    b) Amazon elastic file system 
+        - can be mounted to multiple EC2 instance at the same time
+        - shared file system for multiple servers
+        - it's just a shared file system
+        - it can be mounted to by on premise servers.
+    c) simple storage service (S3)
+        - object storage system
+        - simplicity focuses on simplicity and robustness
+        - object and metadata
+
+    
+- AWS snowball and aws snowmobile
+
+8) AWS storage gateway
+    - utilizes a VM image in on-prem environment that securely connects to the gateway endpoint within AWS. This allows to connect local storage resources to the AWS cloud and enables you to add availability, fault tolerance, and scalability to your storage mechanisms.
+    AWS storage gateway options:-
+        - File-based
+        - Volume-based
+        - Tape-based
+
+9) File Gateway
+    - file based solution supports a file interface into S3 and it enables you to store you to store and retrive objects in S3 
+    - enables to store and retrive objects in S3 using industry-standard file protocals such as NFS,network file system and SMB Server Message Block
+
+10) volume gateway
+    - provides cloud back storage volumes that can be mount as iSCSI devices from on-premises application servers.
+    - 2 config options:-
+        - cached volumes
+            - store data in s3 and retian a copy of frequently accessed data subsets locally.
+        
+        - stored volumes
+            - low-latency access to the entire dataset, stored localley and snapshots can be made from the on-prem storage.
+
+11) Tape Gateway
+    - durably archive backup data into AWS.
+    - provides virtual tape infrastructure that scales seamlessly wih business needs and eliminates the operational burden of provisioning, scaling, and maintaining a physical tape infrastructure.
+    
+
+12) Data Sync
+    - data transfer service that simplifies, automates, and accelerates moving and replicating databetween on-prem storage systems and AWS storage services over the internet or AWS Direct Connect.
+    - supports sync between NFS to Amazon EFS or S3
+
+
+
+-----------------------------------------------------------------------------------------
+
+* Database migration service
+
+- to and from same to same, one to another data platfroms
+- provides database schema tool
+- to use this service, one endpoint must always be located in an AWS service.
+- migration from one on-premises to anther on-premises database is not supported.
+
+
+- Storage Schema conversion tool
+
+
+-------------------------------------------------------------------------------------------
+
+13) AWS Direct connect and route 53
+    
+    -VPN over the internet
+
+======================================================================================
+PART 4
+======================================================================================
+
+14) AWS system manager and aws cloud formation
+    - cloud formation 
+        - run whole environment with template within few minutes
+
+    - aws system manager 
+        - manage system, it gives path into the servers that are running that enables you to run commands, schedul updates, manage various other tasks from a single point
+        -eg:- run a command on a fleet of servers
+        - allows to manage not only aws servers but also on premises servers.
+        - it uses an agent, SSM agenet or systems manager agent
+
+
+15) Overview an TCO Logic(Total cost of ownership)
+    - TCO Logic :- provide insight into what you currently have, and give you options into what you may want to utilize, in AWS.
+        - can be done as s pre-migration step, or as an ongoing analysis to ensure that you are ruunnig each application in the best place, with the right software, even as your environment and price change.
+
+16) Cloud Endure
+    - fine tuned machine that enables a much easier end-to-end migration into AWS.
+    - simplifies, expedites, and automates large-scale migrations from physical, virtual, and cloud-based infrasrtucture to AWS.
+
+17) Migration Acceleration Program (MAP)
+    - migration delivery partners
+    - migration consulting partners
+    - migration technology partners
+    - 
+
+
+
+
+
+
+
+
+
 
 
 
