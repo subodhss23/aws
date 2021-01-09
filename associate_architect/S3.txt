@@ -1,0 +1,78 @@
+1) S3
+
+a) properties of S3:-
+    - versioning
+    - server access logging
+    - static website hosting
+    - object level logging
+    - tags
+    - transfer acceleration
+    - events
+
+b) AWS S3 provides eventual consistency for DELETES and PUTS in all region.
+
+c) Read-after-write consistency.
+    - Amazon S3 supports read-after-write consistency for new ojbects added to amazon S3 in US standard regions.
+
+d) The file gateway presents a file interface that enables you to store files as objects in Amazon S3 using the industry-standard NFS and SMB file protocals, and access those files iva NFS and SMB from your datacenter or Amazon Ec2, or access those files as objects with the S3 API.
+
+e) All objects by dufault are private. Only the object owner has permission to access these objects. However, the object owner can optionally share objects with others by creating a pre-signed URL, using their own seurity credintails, to gran time-limited permission to wonload the objects.
+
+f) True statements:-
+    - Amazon s3 does not support object locking for concurrent writers.
+    - Any read that is initiated following the receipt of a successful PUT response will return the data written by the PUT.
+    - Updates to a single key are atomic.
+
+g) Amazon S3 automatically scales to high request rates.
+    - at least 3,500 put/post/delete and 5,500 get request per second per prefix in a bucket.
+
+h) AWS recommends using multi-part uploads for larger objects.
+    -with a single PUT operation, users can upload objects up to 5GB in size.
+    - if it exceeds, use multi-part.
+
+i) All objects in S3 are private by default. Only the object owner has permission to access these objects. However, the object owner can optionally share objects with others by creating a per-signed URL, using their own security credentials, to grant time-limited permission to download the objects.
+    - Anyone who receives the pre-signed URL can then access the object.
+
+j) check logs for unauthorized IP address to S3 bucket can viewed by:-
+    - Enabling server access loggin
+        - provides detailed records for the request that are made to a bucket.
+
+     - Enabling CloudTrail logging using OPTIONS object
+       
+k) system metadata and user defined metadata
+
+l)Server access logging provides detailed records for the requests  that are made to a bucket.
+
+m) Cross-origin resource sharing (CORS) defines a way for client web application that are loaded in one domain to interact with resources in a different domain.
+    - If uploading or put is blocked to S3, add configuration is s3 bucket CORS to allow PUT requests from web applition URL.
+
+n) If overwritten s3 bucket, right after that if the object is being requested, user might get any version between cause PUTS and DELETES are eventual consistency.
+
+o) valid URL for accesing the bucktes:-
+    - https://bucket-name.s3.Region.amazonaws.com/key_name
+        https://my-bucket.s3.us-west-2.amazonaws.com/puppy.png
+    - https://s3.Region.amazonaws.com/bucket-name/key_name
+        https://s3.us-west-2.amazonaws.com/mybucket/puppy.jpg
+
+p) size of S3:-
+    min:- 0 Byte
+    max:- 5 terabytes
+
+q)for logs not frequently accessed can be sent to STANDARD-IA and can be moved to Glacier later.
+
+r) When versioning is enabled on S3 bucket and a new version is added to an existing object, remember that older version still remains and AWS charges same price for old version and new versions.
+        - eg:- 1 GB uplaoded on day 1 remains in S3 for all 25 days, 5GB uploaded on day 15 will be in S3 for only 11 days.
+
+s) When user delete an object in a versioning-enabled bucket, all versions remain in the bucket and Amazon S3 creates a delete marker for the object. To undelete an object, one must delete the delete marker.
+
+t) DELETE API call on the object does not delete the actual object, but places delete market on the object.
+
+u) How to send notificaiton to a group of people who do not have AWS IAM account?
+    - Use S3 event notification and configure Lambda function which sends email using AWS SES non-sandboc.
+    - Use S3 event notification and configure SNS which sends email to subsribed email addresses.
+
+v) Latency of upload and download fo videos file can be solved by:-
+    - using CloudFront for imporoving the performance on website by caching static files.
+    - Enabling Transfer Acceleration feature on S3 bucket which uses AWS edge locations to improve upload and download speeds.
+
+w) Cross region replication requires versioning to be enabled on both source and destination buckets.
