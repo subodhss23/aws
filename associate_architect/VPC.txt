@@ -1,4 +1,4 @@
-
+            Virtual Private Connection(VPC)
 
 
 1. Two VPC needs to access internet(outbound) without letting unauthorized inbound traffic by creating NAT gateways in both VPCs and configure routes for each VPC to use its own NAT Gateway.
@@ -14,4 +14,59 @@
 
 6. NAT gateway needs to be created in a private subnet with an Internet Gateway. The route table needs to be updated to direct Internet-bound traffic to the NAT gateway.
 
- 
+7. A bastion host is a server whose purpose is to provide access to a private network from an external network, such as the internet. It doesn not act as a proxy to route traffic from internet to private EC2 instance.
+
+8. Security groups are stateful - if you send a request from your instance, the response traffic for that request is allowed to flow in regardless of inbound security group rules.
+    - Responses to allowed inbound traffic are allowed to flow out, regardless of outbound rules.
+    - Network ACLs are stateless; response to allowed inbound traffic are subject to the rules for outbound traffic( and vice versa).
+    - opening 0.0.0.0/0 is insecure, which means ALLOW ALL.
+
+9. In web request, the NACL should particularly have the outbound rules open to ephemeral ports for successful communication.
+
+10. VPC Gateway endpoints are not supported outside VPC.
+    - Endpoint connections cannot be extended out of a VPC. VPC peering connection, AWS Direct Connection, or ClassicLink connection in your VPC cannot use the endpoint to communicate with resources in the endpoint service. So, to support such use cases, we cna setup and S3 proxy server on AWS EC2 instance as shown below.
+
+11. By default, Amazon VPC security groups allow all outbound traffic, unless you've specifically restricted outbound access.
+    - For a gateway endpoing, if your security group's outbound rules are restricted, you must add a rule that allows outbound traffic from your VPC to the service that's specified in your endpoint. To do this, you can use service's prefix list ID as the destination in the outbound rule.
+    
+12. In a VPC peering connection, using NAT Gateway of another VPC becomes transitive routing and  is not supported in AWS.
+    - Traffic cannot be route to a NAT gateway through a VPC peering connection,  a VPN connection, or AWS Direct Connection. A NAT gateway cannot be used by resources on the other side of theseconnections.
+
+13. Network ALCs by default allow ALL traffic inbound and outbound. If the network ACL is modified to restrict traffic into the subnet, the EC2 instance launched inside the subnet would also the restricted.
+
+14. The first four IP addresses and the last IP address in eaach subnet CIDR block are reserved by AWS.
+
+15. By default, custom VPCs does not have DNS Hostnames enabled. So when you launch an EC2 instance in custom VPC, you do not have a public DNS name. You should go to VPC action and edit DNS Hostnames and enable it to have DNS hostnames for the resources within VPC.
+
+16. A secondary IPv4 CIDR can be associated with VPC. When you associate a CIDR blcok with your VPC, a route is automatically added to your VPC route tables to enable routing within the VPC(the destination is the CIDR block and the target is local).
+    - subnet's CIDR cannot be edited once created.
+
+17. A custom route table can be made as to the main route table so that all implicit associations of subnets will now point to the newly set main route table. All the future implicitly associations of newly created subnets will point to the newly set main route table.
+    - You can change any route table as main route table.
+
+18. VPC Flow Logs captures IP traffic going to and from network interfaces in your VPC. Flow log data is stored using Amazon CloudWatch Logs. After you've created a flow log, you can view and retrieve its data in Amazon CloudWatch Logs. You can create a flow log for a VPC, a subnet, or a network interface.
+
+19. To send private IPv4 traffic from your instance to an instance in a peer VPC, you must add a route to the route table that's associated with your subnet in which your instance resides. The route points to the CIDR block(or a portion of the CIDR block) of the peer VPC in the VPC peering connection.
+    - The owner of the other VPC in the peering connection must also add a route to their subnet's route table to direct traffic back to your VPC.
+
+20. You can associate seconday IPv4 CIDR blocks with your VPC. When you assocaite a CIDR block with your VPC, a route is automically added to your VPC route table to enable routing withing a VPC (the destination is the CIDR block and the target is local).
+
+21. A flow log for a VPC, a subnet, or a network interface can be created.
+
+22. Any change made to security group are taken into effect immediately.
+
+23. In order to use AWS VPN Cloud Hub, one must create a virtual private gateway with multiple customer gateways, each with unique Border Gateway Protocal (BGP) Autonomous System Number (ASN).
+
+24. A security groups acts as a virtual firewall for EC2 instances to control incoming and outgoing traffic.
+
+25. VPC peering i.e. AWS-provided network connectivity between two VPCs.
+
+26. Egress-only internet gateway is a VPC component that allows outbound communication over IPv6 from instances in your VPC to the internet, and prevents the internet from initiating an IPv6 connection with your instances.
+
+27. For a server to be MAC dependent, one must use VPC with an ENI(Elastic Network Interface)
+
+28. Existing VPC can be expanded by adding secondary CIDR to current VPC.
+
+29. The cause of intermittent packet loss and ohter connectivity failure is Policy-based VPNs using one or more pair of security associations drop already existing connection when new connection requesets are generated with differnet security associations.24. A security groups acts as a virtual firewall for EC2 instances to control incoming and outgoing traffic.
+
+

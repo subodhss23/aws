@@ -1,0 +1,26 @@
+
+
+
+1. Regions and Availabiltiy zones
+    
+    - Regions:- 24
+    - Zones:- 77
+
+
+2. AWS Account, Users and Service scope
+
+    a. Global - IAM Users/AWS Account
+        - Biling, IAM, Route53
+
+    b. Region
+        - S3, DynamoDB, VPC, ELB
+
+    c. AZ(Availablility zones)
+        - EC2, RDS, EBS
+
+3. Services
+    - compute
+    - storage/DB
+    - network and management services
+    - application and development services
+   
