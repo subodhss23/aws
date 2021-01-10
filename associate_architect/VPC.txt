@@ -1,0 +1,17 @@
+
+
+
+1. Two VPC needs to access internet(outbound) without letting unauthorized inbound traffic by creating NAT gateways in both VPCs and configure routes for each VPC to use its own NAT Gateway.
+
+2. Every route table contains a local route for communication within the VPC over IPv4.If your VPC has mone than one IPv4 CIDR block, your route tables contain a local route for each IPv4 CIDR block.If you've associated an IPv6 CIDR block with your VPC, your route tables contain a local route for the IPv6 CIDR block. You cannot modify or delete these routes.
+
+3. Whenever a subnet is created by defualt, it is associated with the main route table. User need to explicitly associate the subnet to the custom route table if different routes are required for main and custom route tables.
+
+4. A NAT gateway cannot send traffic over VPC endpoints, AWS site-to-site VPN connections, AWS Direct Connect, or VPC peering connections. If your instances in the private subnet must access resources over a VPC endpoint, a Site-to-Site VPN connection, or AWS Direct Connect, use the private subnet's route table to route the traffic directly to these devices and also add a route to the S3 VPC Endpoint.
+
+5. a. VPC endpoint has a policy which by default allows all actions on all S3 buckets. We can restrict access to certain S3 buckets and certain action on this policy. IN such cases, for accessing any new buckets or for any new actions, the VPC endpoint policy need to be modified accordingly.
+    b. AWS IAM role/user which is used to access S3 bucket needs to have access granted via IAM policy before accessing. So if the IAM role/user is not an administrator or not having full S3 access, a newly created S3 bucket must be added to the IAM policy.
+
+6. NAT gateway needs to be created in a private subnet with an Internet Gateway. The route table needs to be updated to direct Internet-bound traffic to the NAT gateway.
+
+ 
