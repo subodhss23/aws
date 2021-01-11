@@ -120,4 +120,14 @@
 34. Network Load Balancer requires one certificate per TLS connection to encrypt traffic between client and NLB, and forward decrypted traffic to target servers. Using AWS Certificate Manager is a preferred option, as these certificates are automatically renewed on expiry.
 
 
-35.  
+35. The instance retains its private IPv4 addresses and any IPv6 addresses when hibernate and stated. AWS release the public IPv4 address and assigns a new one when you start it.
+
+
+36. Amazon RDS Read Replicas provide enhanced performance and durability for database(DB) instances. This replication feature makes it easy to lastically scale out beyond the capacity constraints of a single DB Instance for read-heay database workloads.
+
+
+37. When an EC2 instance is in the HIbernate state, you pay only for the EBS volumes and Elastic IP Addresses attached to it.
+
+38. You can use a network address translation (NAT) gateway to enable instance in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a conneciton with those instance.
+
+ 
