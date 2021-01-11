@@ -1,0 +1,92 @@
+            LAMDA
+    
+
+1. AWS Lamda function can run within a private VPC with the resources allocated inside the subnet provided during configuration. For the lambda function to access S3 service endpoint from within private VPC, there should be a NAT Gateway or S3 VPC Endpoint configuration in th route table associated with the subnet which was chosen during Lambda function setup. If not, the request would get timed out.
+
+
+2.One can forward non-processed payloads to Dead Letter Queue(DLQ) using SQS,SNS.
+
+
+3.AWS Lambda runs your function code securely within a VPC by default. However, to enable your Lambda function to access resources inside your private VPC, you must provide additional VPC-specific configuration information that includes VPC subnet IDs and security group IDs. AWS Lambda uses this information to se up elastic network interface (ENIs) taht enable your funciton to connect securly to another resources within your private VPC.
+    - Security groups act as a firewall for any resources (such as RDS instance and Lambda in this case) they are connected with. If there is no inbound rule defined to allow connections from Lambda subnet IP range or the Lambda security group, connecitons will fail.
+
+
+4. Lambda function will write logs as long as the execution role has access to create and write CloudWatch logs irrespective of source that triggered it. 
+    -AWSLambdaKinesisExecutionrole-> Grants permission for Amazon Kinesis Data Streams actions, and CloudWatch Logs actions. If you are writing a Lambda function to process Kinesis steam events you can attch this permission policy. 
+    "logs:CreateLogGroup",
+    "logs:CreateLogStream",
+    "logs:PutLogEvents"
+
+
+5. The maximum batch size supported by AWS SQS for ReceiveMesage call is 10.
+
+
+6. When using an AWS CloudWatch rule to trigger a Lambda event, one of the multiple options you have to pass data onto your Lambda function is "Constant(JSON Text)". This handy feature allows you to send static content to your function instead of the matched event.
+
+
+7. Lambda function can be invoked by using a custom event through AWS Lamda's invoke API. Only the function's owner or another AWS account that the owner has granted permission can invoke the function.
+
+
+8. Following are AWS ClourFront events that can trigger AWS Lambda@edge function?
+    - Viewer Request
+    - Viewer Response
+    - Origin Request
+    - Origin Request
+    - Origin Response
+
+9. When Lambda function is updated, there will be a brief window of time, typically less than a minute, when requests could be served by eiter the old or the new version of your code.
+
+10. AWS Lambda supports the following poll-based services:-
+    - Amazon Kinesis
+    - Amazon DynamoDB
+    - Amazon SQS
+
+
+11. By using aliases, you can access the Lambda function an alias is pointing to (for example, to invoke the function) without the caller having to know the specific version the alias is pointing to.
+
+
+12. Following are correct ARNs for a Lambda function:-
+    - arn:aws:lambda:aws-region:acct-id:function:helloworld:$LATEST
+    - arn:aws:lambda:aws-region:acct-id:function:helloworld
+    -arn:aws:lambda:aws-region:acct-id:function:helloworld:PROD
+
+
+13. AWS Lambda valid configuration:-
+        - 2112 MB memory and 100 seconds timeout.
+
+
+14.The console doesn't support directly modify permissions in a function policy. YOu must use either the AWS CLI or the AWS SDKs.
+
+
+15.If your lambda function accesses a VPC, you must make sure that your VPC has sufficient ENI capacity to support the scale requirements of your lambda function. You can use the following formula to approximately determine the ENI capacity.
+    -projected_peak_concurrent_execution* (Memory in GB/3GB)
+
+16. Following actions are required by Lambda execution role in order to write the logs into AWS CloudWatch:-
+    - logs:CreateLogGroup
+    - logs:CreateLogStream
+    - logs:PutLogsEvents
+
+
+17. The AWS/Lambda namespace includes the following metrices:-
+    - Invocations
+    - Errors
+    - Dead Letter Error
+    - Duration
+    - Throttles
+    - IteratorAge
+    - ConcurrentExecutions
+    - UnreservedConcurrentExecutions
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
