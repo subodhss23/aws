@@ -1,0 +1,123 @@
+
+
+1. A sercurity group acts as a virtual firewall for your instance to control inbound and outbound traffic. Instance level.
+
+2. One of the EBS volumes from the current instance needs to be moved from one of the older instancesto the new instance by creating a snapshot of the volume and then create a volume from the snapshot in the other AZ.
+    - The EBS Volumes attached to the EC2 instance will always have to remain in the same availability zone as the EC2 instance.
+
+
+3. An application on an EC2 instance need to interacts with a DynamoDB table, the most secure way is:- create a role which has the necessary permission and can be assumed by the EC2 instance.
+
+
+4. Company wants to move Kubernetes from on-premises to cloud, AWS Elastic beanstalk could be used for this purpose.
+    - With Elastic Beanstalk, you can quickly deploy and manage applications in the AWS cloud without habing to learn about the infrastructure that runs those applications.
+
+
+5. Creating a custom AMI decreses the amount of time it takes to build servers that are delopled as EC2 instance which have the same type of software installed in it.
+
+
+6. EFA supports OS-bypass functionality that allows HPC application to communicate direcly with network interface hardware that provides low latency and high throughput. HPC application also use message passing interface with the systems network transport.
+    - Amazon cloud watch metrics are required to monitor EFA on Real Time.
+
+
+7. Amazon SQS is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless application.
+
+
+8. A subnet that is inside VPC which has application that needs to be accessed from the Internet should have following configuration:-
+    - An internet gateway attached to the VPC,
+    - Custom Route table entry added for the Internet gateway
+    - All instances launched with a public IP
+
+
+9. A public subnet for the web tier and a private subnet for the database tier.
+
+
+10. How to ensure that the EBS volumes are availble enven in the case of an entire region facing an outage by:-
+    - Creating snapshots of the EBS volumes.
+    - Ensure the snapshots are made available in another region.
+
+
+11. The aspects can be used to create a highly available environment if planning to host a static website on EC2 instance by using:-
+    - auto scaling group
+    - elastic load balancer
+    - multiple availability zone
+
+
+12. To automtically trigger pipeline with changes in the source S3 bucket, Amazon CloudWatch Events rule & AWS CloudTrail trail must be applied. When there is a change in the S3 bucket, events are filtered using AWS CloudTrail and then Amazon CloudWatch events are used to trigger the start of th pipeline. Following tools can be used to monitor CodePipeline pipelines and their resources:-
+    - Amazon CloudWatch Events
+    - AWS CloudTrail
+    - Console and CLI
+
+
+13. Amazon Data Lifecycle Manager can be used for creation, retention and deletion of EBS snapshots. It protects critical data by initiating backup of Amazon EBS volumes at selected intervals, along with storing and deletion of old snapshots to save storeage space and cost.
+
+
+14. AWS CloudFromation is a service that helps you model and setup your Amazon web services resources so that you can spend less time managing those resources and more time focusing on your application that run in AWS. You create a template that descrives all the AWS resources that you want(like Amazon EC2 instances or Amazon RDS DB instance), and AWS CloudFromation takes care of provisioning and configuring those resources for you.
+
+
+15.A bastion host is a server whose purpose is to provide access to a private network from an external network, such as internet.
+
+
+16. A security group acts as a virtual firewall for you instance to control inbound an outbound traffic. It is sateful which means you do not need to opent the outbound for responses - open only inbound for requests.
+
+
+17. To get the private and public IP addresses, you can run the following commands on the running instance:-
+    - using a curl or get command to get the latest meta-dat from http://169.254.169.254/latest/meta-data/
+
+
+18. AWS VPC can connect to their on-premises network with VPN connections.
+
+
+19. By using AWS organizations and Service control policies one can ensure that the security policies are keps in place at the Account level.
+
+
+20. Using Amazon CloudWatch alarm actions, you can create alarms that automatically stop, terminate, reboot, or recover your EC2 instances.
+
+
+21. Cluster Placement groups are recommended for application that benefit from low network latency, high netowrk throughput, or both, and if the majority of the network traffic is between the instances in the group.
+
+
+22. How to ensure that if any new files are added to an S3 bucket, and even notification would be send to the IT admin staff?
+    - by creating an SNS topic
+    - by adding an event notification to the S3 bucket
+
+
+23. While mounting Amazon EFS, if encryption of data in transit is enabled, EFS Mount helper initializes the client Stunnel process to encrypt data in transit. EFS Mount helper uses TLS 1.2 to encrypts data in transit.
+
+
+24. AWS WAF is a web application firewall that helps protect your web applications from common web sploits that could affect application availability, compromise security, or consume excessive resources. 
+
+
+25. Amazon SQS is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. It is a distributed queuing system.
+
+
+26. The pre-requisites that are need to be ensure for establishing the site-to-site VPN connection are:-
+    - A  customer gateway
+    - A virual private gateway
+
+
+27. AWS Cloud HSM is a bloud-based hardware security module (HSM) that enables you to easily generate and use your own encryption keys on the AWS Cloud.
+
+
+28. One can back uo the data on their Amazon EBS volumes to Amazon S3 by taking point-ni-time snapshots. Snapshots are incrementalbackup, which mean that only the blocks on the device that have changed after your most recent snapshot are saved.
+
+
+29. Amazon RDS Multi-AZ deployments provide enhanced availability and durability for Database (DB) Instances, making them a natual fit for production database workloads.
+
+
+30. Amazon CloudWatch is a monitoring and management which collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applciations and services that run on AWS, and on-premises servers.
+
+
+31. Amazon SQS offers a secure, durable, and available hosted queue that lets you integrate and decouple distributed software systems and components.
+
+
+32. When you launch an instance, you associate one or more security groups with the instance. You add rules to each security group that allow traffic to or from its assciated instances. For connecting via SSH on EC2, you need to ensure that port 22 is open on the security group for the EC2 instance.
+
+
+33. Network Load Balancer can be used to terminate TLS connections instead of back end instance reducing the load on this instance. With Network Load Balancer, millions of simultaneous sesions can be established with no impace on latency along with preserving cliend IP adderess. To negotiate TLS connections with clients, NLB uses a security policy which consists of protocols and ciphers.
+
+
+34. Network Load Balancer requires one certificate per TLS connection to encrypt traffic between client and NLB, and forward decrypted traffic to target servers. Using AWS Certificate Manager is a preferred option, as these certificates are automatically renewed on expiry.
+
+
+35.  
