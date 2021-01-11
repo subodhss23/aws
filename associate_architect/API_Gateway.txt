@@ -1,0 +1,39 @@
+1. some of the valid integration sources for API Gateway:-
+    - public facing HTTP-based endpoints outside AWS network
+    - Lambda functions from another account
+    - VPC Link
+
+
+2. Use VPC link to integrate on-premises backend solutions through DirectConnect and private VPC.
+
+
+3. To prevent API from being overwhelmed by too many requests. Amazon API Gateway throttles requests to your API using the token bucket algorithm, where a token count for a request. Specifically, API Gateway sets a limit on a steady-state rate and a burst of request submissions against all API in your account. In the token bucket algorithm, the burst is the maximum bucket size.
+
+
+4. When API receives large number of requests and overloading backend system causing performance bootlenecks and eventyally causing delays and failures in serving the request,
+    - enabling throttling and contol the number of requests per second
+    - enabling API caching to server frequently requested data from API cache 
+    can be done.
+
+
+5. Amazon API Gateway Usage plans now support method level throttling.
+
+
+6. Controlling Access to an API in API Gateway:-
+    - Resource policies
+    - Standard AWS IAM roles and policies
+    - Cross-origin resource sharing (CORS)
+    - Lambda authorizers
+    - Amazon Cognito user pools
+    - Client-side SSL certificates
+    - Usage plans
+
+
+7. Protection from distributed denial-of-service (DDoS) attacks is provided default by AWS to protect the backend systems, in AWS API Gateway.
+
+8. Following are the settings and actions when enabling/disabling API caching for API Gateway:-
+    -flush entire cache
+    -cache capacity
+    -encrypt cache data
+
+9. Enabling access logging 

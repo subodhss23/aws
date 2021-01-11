@@ -1,0 +1,30 @@
+            Amazon Elastic File System(EFS)
+
+
+1. EFS mount target security group inbound rules do not allow traffic from new EC2 instance.
+    - To acess an Amazon EFS file system in a VPC, you need mount targets. For an Amazon EFS file system, the following is true:
+        - You can create one mount target in each availabilty zone.
+        - If the VPC has multiple subnets in an Availability Zone, you can create a mount target in only one of those subnets. All EC2 instance in the Availability Zone can share the single mount target.
+
+
+2. Working with VPC Peering in Amazon EFS
+    - A VPC peering conneciton is a networking connection between two VPCs that enables you to route traffic between them using private Internet Protocal version 4 (IPv4) or Internet Protocal version 6(IPv6) addresses. 
+
+
+3. Newly created security group that allows Secure shell (SSH) to connect the instance and communication between EC2 instance and EFS with Open port 22(SSH) on EC2 security group and port 2049(NFS) on EFS security group.
+
+
+4. Both an Amazon EC2 instance and a mount target have associated security groups. These security groups and act as a virtual firewall that controls the traffic between them.
+    - The security groups associated with a mount target must allow inbound access for the TCP protocal on the NFS port from all EC2 instance on which you want to mount the file system.
+
+
+5. Encryption at rest option can only be set during EFS creation. You need to create encryption-at-rest EFS, copy data from old EFS to new EFS and delete old EFS.
+
+
+6. AWS uses NFS protocol from EFS. NFS is not an encrypted protocol and anyone on the same physical network could sniff the traffic and reassemble the information being passed back and forth. However, AWS provides an option to encrypt data at transit through NFS to EFS. 
+
+
+7. File system in the Max I/O mode can scale to higher levels of aggregate throughput and operations per second whith a tradeoff of slightly higher latencies for file operations. Hightly parallelized applications and workloads, such as big data analysis, media processing, and genomics analysis, can benefit from this mode.
+
+
+
