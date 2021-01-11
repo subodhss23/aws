@@ -1,0 +1,38 @@
+                Route 53
+
+1. Three main functions of AWS Route 52 are:-
+    - Register domain names
+    - Route internet traffic to the resources for the domain
+    - Check the health of resources
+
+
+2. A - IPv4 address with Alia=YES
+        - if domain names need to be used
+
+3. Amazon route 52 can route traffic to:-
+    - Cloudfront
+    - EC2
+    - Elastic Beanstalk
+    - Elastic Load Balancing
+    - RDS
+    - S3
+    - Workmail
+
+4. A record maps a name to one or more IP addresses when IP are known and stable The CNAME record maps a name to another name. The ALIAS record maps a name to another name, but can coexist with other records on the name.
+
+
+5. AWS Route 53 record set, following are routing policy:-
+    - simple routing policy
+    - failover routing polic
+    - geolocaion routing policy
+    - geoproximity routing policy
+    - latency routing policy
+    - multivalue answer routing policy
+    - weighted routing policy
+
+6. Amazon route 53 health checks are:-
+    - health checks that monitor an endpoint
+    - health chedks that monitor other health checks (calculated health checks)
+    - health checks that moniot cloudwatch alarms
+
+
