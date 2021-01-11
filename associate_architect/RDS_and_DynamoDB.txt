@@ -1,0 +1,17 @@
+                RDS and DynamoDB
+
+
+1. The canonical name record is changed from the primary database to the standby database if the primary DB instance fails.
+    - The failover mechanism automatically changes the DNS CNAME record of the DB instance to point to the standby DB instance.
+
+2. Global Seconday Indexes.
+
+3. IPsec VPN connection through the Virtual Private Cloud service and configre replication in MySQL Server cause it provides themost secure direct connection from the RDS MySQL Server instance to the On Premise data center, and replication can be configured within the MySQL Server service since it can't be done from the RDS service to On Premise data center.
+
+
+4.Elasticache service should be used to cache all the common queries.
+
+
+5.Transactions are not impacted while Read-replica.
+
+
