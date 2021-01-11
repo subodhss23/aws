@@ -20,3 +20,8 @@
     - sms
 
 7. Amazon SNS message filtering.
+
+8. AWS SNS message attribut consists of the following items:-
+    -name
+    -type
+    -value

@@ -1,0 +1,40 @@
+        Elastic Load Balancer and Autoscaling
+
+
+1. Following components effectively facilitates a user to setup Autoscaling of EC2 instance for a web-based application:-
+    - Launch Configuration
+    - Elastic Load Balancer
+    - Autoscaling Group
+
+
+2. AMI ID is a configuration on Launch Configuration, not Auto Scaling Group.
+
+
+3. Following are the default metric types available for Simple Policy and Step Policy:-
+    - Average CPU Utilization
+    - Average Network in(Bytes)
+    - Average Network Out(Bytes)
+
+4. While the EC2 status checks and ELB healt checks can complete before the health check grace period expires, Amazon EC2 auto scaling does not act on them until the health check grace period expires.
+
+
+5. EC2 instance shows unhealthy status when:-
+    - a security group does not allow traffic
+    - a network access control list (ACL) does not allow traffic
+    - the ping path does not exist
+    - the connection times out
+    - the target did not return a successful response code
+
+
+6. Monitor application load balnces with:-
+    - cloudwatch metrics
+    - access logs
+    - request tracing
+    - cloudtrail logs
+
+
+7. The subnets specified for load balancer needs to have internet gateway attched to their route tables for VPC.
+
+8. Correct way to register a target in Elastic Load Balancer target group with IP addresses.
+
+ 
