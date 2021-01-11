@@ -1,0 +1,22 @@
+                STS, SNS, SQS
+
+
+1. Amazon SQS doesn't automatically delete themessage.
+    - Deleted message cannot be received again.
+
+2. - Amazon SQS long polling
+   - Amazon SQS batch actions
+
+3. All messages in Amazon SQS queue are not encrypted by default.
+
+4. Using SAML-Based Federation for API Access to AWS.
+
+5. Enabling CloudTrail logging for SNS gives history of all API calls and the response given out by AWS SNS for audit purposes.
+
+6. Following are delivery formats/transports for receiving notifications:-
+    - https, http
+    - email, email-JSON
+    - sqs
+    - sms
+
+7. Amazon SNS message filtering.
