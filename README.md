@@ -1,2 +1,2 @@
 # aws
-notes on aws: learn by doing.
+notes on aws: learning by doing.
