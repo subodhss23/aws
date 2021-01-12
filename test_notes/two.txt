@@ -1,0 +1,22 @@
+1. SWF(simple Workflow service)
+    - Amazon SWF helps developers buid, run, and scale background jobs that have parallel or sequential steps. You can think of Amazon SWF as a fully-managed state traver and task coordinator in the cloud.
+
+
+2. Amazon EMR is a big data platform used for processsing large amounts of data. For analyzing large amounts of data, Amazon EMR can be used to provide reliable cost-effective solutions.
+
+
+3. DynamoDB auto scaling uses the AWS Application Auto Scaling service to dynamically adjust provisioned throughput capacity on your behalf, in response to acutal traffic patters.
+
+
+4. Environment variables for Lambda functions enable you to dynamically pass settings to your function code and libraries, without making changes to your code.
+
+
+5. Amazon Kinesis Data Firehose can be used to deliver data from thousands of sources to AWS service for further analysis.
+
+
+6. Permission sets can control time duration for user login to the AWS console by setting session duration. The default session duration is 1 hour while the maximum can be set to 12 hours. Post this session duration, the users is automatically logout. AWS single sign on (SSO) enables you to customize the session duration to AWS accounts ranging from 1 hour up to 12 hours.
+
+
+7. Amazon Elastic Kubernetes Service can be used to set up open-source Container orchestration like Kubernetes.
+
+
